@@ -54,7 +54,7 @@ public class BoardServiceImpl implements BoardService {
 
     //전체 게시물 리스트
     @Override
-    public List<BoardVO> getListAll(Integer page) {
+    public List<BoardDTO> getListAll(Integer page) {
         return boardDAO.getListAll(page);
     }
     //추천수로 정렬

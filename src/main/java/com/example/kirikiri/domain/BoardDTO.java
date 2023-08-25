@@ -31,9 +31,10 @@ public class BoardDTO {
     private String boardContent;
     private String boardRegisterDate;
     private String boardUpdateDate;
-    private int boardViews;
-    private int boardLikes;
+    private Long boardViews;
+    private Long boardLikes;
     private String userId;
+    private String userProfile;
     private int sortType = 1;
     private int page = 1;
     private String keyword;
@@ -68,5 +69,19 @@ public class BoardDTO {
         this.boardViews = boardVO.getBoardViews();
         this.boardLikes = boardVO.getBoardLikes();
         this.comments = comments;
+    }
+    @Builder
+    public BoardDTO(BoardVO boardVO, String userProfile) {
+        this.nationName = boardVO.getNationName();
+        this.categoryName = boardVO.getCategoryName();
+        this.detailCategoryName = boardVO.getDetailCategoryName();
+        this.boardTitle = boardVO.getBoardTitle();
+        this.boardContent = boardVO.getBoardContent();
+        this.userId = boardVO.getUserId();
+        this.boardRegisterDate = boardVO.getBoardRegisterDate();
+        this.boardUpdateDate = boardVO.getBoardUpdateDate();
+        this.boardViews = boardVO.getBoardViews();
+        this.boardLikes = boardVO.getBoardLikes();
+        this.userProfile = userProfile;
     }
 }

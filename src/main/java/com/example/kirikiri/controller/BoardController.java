@@ -1,10 +1,7 @@
 package com.example.kirikiri.controller;
 
 import com.example.kirikiri.domain.*;
-import com.example.kirikiri.service.BoardService;
-import com.example.kirikiri.service.CommentService;
-import com.example.kirikiri.service.ScrapService;
-import com.example.kirikiri.service.UserService;
+import com.example.kirikiri.service.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.catalina.User;
@@ -33,6 +30,7 @@ public class BoardController {
     private final UserService userService;
     private final ScrapService scrapService;
     private final CommentService commentService;
+    private final LikeService likeService;
 
     @GetMapping("/all")
     public String getList(BoardDTO boardDTO, Integer page, Model model, HttpServletRequest request){
@@ -229,7 +227,10 @@ public class BoardController {
         if(!boardDTO.getBoardUpdateDate().equals(boardDTO.getBoardRegisterDate())) updateCheck = true;
         else updateCheck = false;
 
+        Long boardLikes = likeService.getLikes(boardId);
+        if(boardLikes == null) boardLikes = 0L;
 
+        boardDTO.setBoardLikes(boardLikes);
 
 
         model.addAttribute("userVO", userVO);
@@ -239,6 +240,23 @@ public class BoardController {
         model.addAttribute("updateCheck", updateCheck);
         model.addAttribute("scrapCheck", scrapCheck);
         model.addAttribute("boardId", boardId);
+
+        LikeVO likeVO = new LikeVO();
+        if(userId != null) {
+            likeVO.setBoardId(boardId);
+            likeVO.setUserId(userId);
+            likeVO = likeService.getLikeVO(likeVO);
+            if(likeVO == null) {
+                likeVO = new LikeVO();
+                likeVO.setLikeCount(0L);
+            }
+        }
+
+        model.addAttribute("likeVO", likeVO);
+
+
+
+
 
         return "/post";
     }
@@ -336,24 +354,32 @@ public class BoardController {
     public String getWrittenBoard(Integer page, String userId, Model model, HttpServletRequest request) {
         if(page == null) page = 1;
         boolean userCheck2 = false;
+        boolean userCheck = false;
         HttpSession session = request.getSession();
         String sessionUserId = null;
+        Boolean profileCheck = false;
 
         if(session != null){
             sessionUserId = (String)session.getAttribute("userId");
             if(sessionUserId != null) {
                 if (sessionUserId.equals(userId)) userCheck2 = true;
+                profileCheck = true;
+                userCheck = true;
             }
         }
+        model.addAttribute("profileCheck", profileCheck);
 
-        UserVO userVO = userService.getUserVOById(userId);
+        UserVO userVO = userService.getUserVOById(sessionUserId);
+        UserVO targetUserVO = userService.getUserVOById(userId);
 
         Integer pageTotal = boardService.getCountByUser(userId);
         PageDTO pbt = new PageDTO().createPageBoardDTO(page, pageTotal);
         model.addAttribute("pagination", pbt);
         model.addAttribute("boards", boardService.getWrittenBoard(userVO.getUserId(), pbt.getPage()));
+        model.addAttribute("userCheck", userCheck);
         model.addAttribute("userCheck2", userCheck2);
         model.addAttribute("userVO", userVO);
+        model.addAttribute("targetUserVO", targetUserVO);
 
         return "/activity/writtenBoard";
     }

@@ -20,7 +20,7 @@ public interface BoardService {
     public Integer getCountByUser(String userId);
 
     //전체 게시물 조회
-    public List<BoardVO> getListAll(Integer page);
+    public List<BoardDTO> getListAll(Integer page);
     public List<BoardVO> getListAllOrderByLikes(Integer page);
     public List<BoardVO> getListAllOrderByViews(Integer page);
 

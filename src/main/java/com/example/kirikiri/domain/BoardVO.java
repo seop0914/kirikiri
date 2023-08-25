@@ -29,8 +29,8 @@ public class BoardVO {
     private String boardContent;
     private String boardRegisterDate;
     private String boardUpdateDate;
-    private int boardViews;
-    private int boardLikes;
+    private Long boardViews;
+    private Long boardLikes;
     private String userId;
 
     @Builder
@@ -43,7 +43,7 @@ public class BoardVO {
         this.userId = userId;
     }
 
-    public BoardVO(Long boardId, String nationName, String categoryName, String detailCategoryName, String boardTitle, String boardContent, String boardRegisterDate, String boardUpdateDate, int boardViews, int boardLikes, String userId) {
+    public BoardVO(Long boardId, String nationName, String categoryName, String detailCategoryName, String boardTitle, String boardContent, String boardRegisterDate, String boardUpdateDate, Long boardViews, Long boardLikes, String userId) {
         this.boardId = boardId;
         this.nationName = nationName;
         this.categoryName = categoryName;

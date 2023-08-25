@@ -28,5 +28,8 @@ public interface UserService {
 
     // 비밀번호 재설정
     public void updatePw(UserVO userVO);
+
+    // 유저 아이디로 프로필 찾기
+    public String getProfileByUserId(String userId);
 }
 

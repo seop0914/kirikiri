@@ -206,7 +206,7 @@
                     <button id="down-button">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="hover:text-red-500 group-hover:text-red-500 h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path></svg>
                     </button>
-                    <p th:text="*{boardLikes}"></p>
+                    <p id="board-likes" th:text="*{boardLikes}"></p>
                     <button id="up-button">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="hover:text-blue-500 group-hover:text-blue-500 h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"></path></svg>
                     </button>
@@ -308,175 +308,6 @@
                         </div>
                     </div>
                 </th:block>
-
-                    <div class="comment-first-line">
-                        <div>
-                            <a href=""><img class="profile-picture" src="../static/img/community-profile.png" alt=""></a>
-                            <div class="comment-info-text">
-                                <a class="comment-nickname">takin17</a>
-                                <span><svg class="inline h-3 w-3" width="9" height="12" viewBox="0 1 9 12" fill="none" xmlns="http://www.w3.org/2000/svg"><title>bolt icon</title><path fill-rule="evenodd" clip-rule="evenodd" d="M5.21535 0.575533C5.4443 0.647704 5.6 0.86003 5.6 1.10009V3.85009L7.8 3.85009C8.00508 3.85009 8.19313 3.96419 8.28783 4.14609C8.38254 4.328 8.36818 4.54748 8.25057 4.71549L4.40057 10.2155C4.26291 10.4122 4.0136 10.4968 3.78464 10.4246C3.55569 10.3525 3.4 10.1401 3.4 9.90009L3.4 7.15009H1.2C0.994914 7.15009 0.806866 7.03599 0.712157 6.85408C0.617448 6.67218 0.631811 6.45269 0.749418 6.28468L4.59942 0.784684C4.73708 0.588021 4.98639 0.503362 5.21535 0.575533Z" fill="currentColor"></path></svg>4.9k ㆍ 1일 전</span>
-                            </div>
-                        </div>
-                        <div class="like-dislike">
-                            <button class="down-button">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="hover:text-red-500 group-hover:text-red-500 h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path></svg>
-                            </button>
-                            <p>0</p>
-                            <button class="up-button">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="hover:text-blue-500 group-hover:text-blue-500 h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"></path></svg>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="comment-content">
-                        <p>4년차면 쉽게 이직 가능할듯요</p>
-                    </div>
-                    <div class="comment-reply-button">
-                        <button class="comment-reply-hidden"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-4 w-4"><path fill-rule="evenodd" d="M11.47 7.72a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06L12 9.31l-6.97 6.97a.75.75 0 01-1.06-1.06l7.5-7.5z" clip-rule="evenodd"></path></svg>댓글 모두 숨기기</button>
-                        <input type="checkbox" class="hidden-check" style="display: none">
-                        <button class="comment-reply-add">댓글 쓰기</button>
-                    </div>
-                    <div class="comment-reply-area">
-                        <input type="checkbox" class="reply-check">
-                        <div class="comment-reply-write">
-                            <div class="add-comment">
-                                <div>
-                                    <img class="profile-picture" src="../static/img/community-profile.png" alt="">
-                                </div>
-                                <form class="add-comment-form" action="">
-                                    <div class="summernote"></div>
-                                    <div class="add-comment-button">
-                                        <button type="button" class="cancel-comment-reply">취소</button>
-                                        <button type="submit" class="submit-comment-reply">댓글 쓰기</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="comment-reply-list">
-                            <div class="comment-reply">
-                                <div class="comment-first-line">
-                                    <div>
-                                        <a href=""><img class="profile-picture" src="../static/img/community-profile.png" alt=""></a>
-                                        <div class="comment-info-text">
-                                            <a class="comment-nickname">takin17</a>
-                                            <span><svg class="inline h-3 w-3" width="9" height="12" viewBox="0 1 9 12" fill="none" xmlns="http://www.w3.org/2000/svg"><title>bolt icon</title><path fill-rule="evenodd" clip-rule="evenodd" d="M5.21535 0.575533C5.4443 0.647704 5.6 0.86003 5.6 1.10009V3.85009L7.8 3.85009C8.00508 3.85009 8.19313 3.96419 8.28783 4.14609C8.38254 4.328 8.36818 4.54748 8.25057 4.71549L4.40057 10.2155C4.26291 10.4122 4.0136 10.4968 3.78464 10.4246C3.55569 10.3525 3.4 10.1401 3.4 9.90009L3.4 7.15009H1.2C0.994914 7.15009 0.806866 7.03599 0.712157 6.85408C0.617448 6.67218 0.631811 6.45269 0.749418 6.28468L4.59942 0.784684C4.73708 0.588021 4.98639 0.503362 5.21535 0.575533Z" fill="currentColor"></path></svg>4.9k ㆍ 1일 전</span>
-                                        </div>
-                                    </div>
-                                    <div class="like-dislike">
-                                        <button class="down-button">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="hover:text-red-500 group-hover:text-red-500 h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path></svg>
-                                        </button>
-                                        <p>0</p>
-                                        <button class="up-button">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="hover:text-blue-500 group-hover:text-blue-500 h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"></path></svg>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="comment-content">
-                                    <p>4년차면 쉽게 이직 가능할듯요</p>
-                                </div>
-                                <div class="comment-reply-button">
-                                    <button class="comment-reply-add">댓글 쓰기</button>
-                                </div>
-                                <input type="checkbox" class="reply-check">
-                                <div class="comment-reply-write">
-                                    <div class="add-comment">
-                                        <div>
-                                            <img class="profile-picture" src="../static/img/community-profile.png" alt="">
-                                        </div>
-                                        <form class="add-comment-form" action="">
-                                            <div class="summernote"></div>
-                                            <div class="add-comment-button">
-                                                <button type="button" class="cancel-comment-reply">취소</button>
-                                                <button type="submit" class="submit-comment-reply">댓글 쓰기</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="comment-reply">
-                                <div class="comment-first-line">
-                                    <div>
-                                        <a href=""><img class="profile-picture" src="../static/img/community-profile.png" alt=""></a>
-                                        <div class="comment-info-text">
-                                            <a class="comment-nickname">takin17</a>
-                                            <span><svg class="inline h-3 w-3" width="9" height="12" viewBox="0 1 9 12" fill="none" xmlns="http://www.w3.org/2000/svg"><title>bolt icon</title><path fill-rule="evenodd" clip-rule="evenodd" d="M5.21535 0.575533C5.4443 0.647704 5.6 0.86003 5.6 1.10009V3.85009L7.8 3.85009C8.00508 3.85009 8.19313 3.96419 8.28783 4.14609C8.38254 4.328 8.36818 4.54748 8.25057 4.71549L4.40057 10.2155C4.26291 10.4122 4.0136 10.4968 3.78464 10.4246C3.55569 10.3525 3.4 10.1401 3.4 9.90009L3.4 7.15009H1.2C0.994914 7.15009 0.806866 7.03599 0.712157 6.85408C0.617448 6.67218 0.631811 6.45269 0.749418 6.28468L4.59942 0.784684C4.73708 0.588021 4.98639 0.503362 5.21535 0.575533Z" fill="currentColor"></path></svg>4.9k ㆍ 1일 전</span>
-                                        </div>
-                                    </div>
-                                    <div class="like-dislike">
-                                        <button class="down-button">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="hover:text-red-500 group-hover:text-red-500 h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path></svg>
-                                        </button>
-                                        <p>0</p>
-                                        <button class="up-button">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="hover:text-blue-500 group-hover:text-blue-500 h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"></path></svg>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="comment-content">
-                                    <p>4년차면 쉽게 이직 가능할듯요</p>
-                                </div>
-                                <div class="comment-reply-button">
-                                    <button class="comment-reply-add">댓글 쓰기</button>
-                                </div>
-                                <input type="checkbox" class="reply-check">
-                                <div class="comment-reply-write">
-                                    <div class="add-comment">
-                                        <div>
-                                            <img class="profile-picture" src="../static/img/community-profile.png" alt="">
-                                        </div>
-                                        <form class="add-comment-form" action="">
-                                            <div class="summernote"></div>
-                                            <div class="add-comment-button">
-                                                <button type="button" class="cancel-comment-reply">취소</button>
-                                                <button type="submit" class="submit-comment-reply">댓글 쓰기</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="comment-reply">
-                                <div class="comment-first-line">
-                                    <div>
-                                        <a href=""><img class="profile-picture" src="../static/img/community-profile.png" alt=""></a>
-                                        <div class="comment-info-text">
-                                            <a class="comment-nickname">takin17</a>
-                                            <span><svg class="inline h-3 w-3" width="9" height="12" viewBox="0 1 9 12" fill="none" xmlns="http://www.w3.org/2000/svg"><title>bolt icon</title><path fill-rule="evenodd" clip-rule="evenodd" d="M5.21535 0.575533C5.4443 0.647704 5.6 0.86003 5.6 1.10009V3.85009L7.8 3.85009C8.00508 3.85009 8.19313 3.96419 8.28783 4.14609C8.38254 4.328 8.36818 4.54748 8.25057 4.71549L4.40057 10.2155C4.26291 10.4122 4.0136 10.4968 3.78464 10.4246C3.55569 10.3525 3.4 10.1401 3.4 9.90009L3.4 7.15009H1.2C0.994914 7.15009 0.806866 7.03599 0.712157 6.85408C0.617448 6.67218 0.631811 6.45269 0.749418 6.28468L4.59942 0.784684C4.73708 0.588021 4.98639 0.503362 5.21535 0.575533Z" fill="currentColor"></path></svg>4.9k ㆍ 1일 전</span>
-                                        </div>
-                                    </div>
-                                    <div class="like-dislike">
-                                        <button class="down-button">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="hover:text-red-500 group-hover:text-red-500 h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path></svg>
-                                        </button>
-                                        <p>0</p>
-                                        <button class="up-button">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="hover:text-blue-500 group-hover:text-blue-500 h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"></path></svg>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="comment-content">
-                                    <p>4년차면 쉽게 이직 가능할듯요</p>
-                                </div>
-                                <div class="comment-reply-button">
-                                    <button class="comment-reply-add">댓글 쓰기</button>
-                                </div>
-                                <input type="checkbox" class="reply-check">
-                                <div class="comment-reply-write">
-                                    <div class="add-comment">
-                                        <div>
-                                            <img class="profile-picture" src="../static/img/community-profile.png" alt="">
-                                        </div>
-                                        <form class="add-comment-form" action="">
-                                            <div class="summernote"></div>
-                                            <div class="add-comment-button">
-                                                <button type="button" class="cancel-comment-reply">취소</button>
-                                                <button type="submit" class="submit-comment-reply">댓글 쓰기</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -579,7 +410,7 @@
     }
 
     const boardId = [[${boardId}]];
-    const userId = [[${userVO.userId}]]
+    const userId = [[${userVO.userId}]];
 
     scrap.addEventListener("click", ()=>{
         if(scrapCheck.checked === false) {
@@ -619,6 +450,125 @@
         console.log(data);
 
     }
+
+    // 좋아요 추가 or 취소
+    let boardLikes = document.getElementById("board-likes");
+    let likeUpButton = document.getElementById("up-button");
+    let likeDownButton = document.getElementById("down-button");
+    let likeCount = [[${likeVO.likeCount}]];
+
+    likeUpButton.addEventListener("click", () => {
+        if(likeCount === 1) {
+            $.ajax({
+                type: "get",
+                url: "/like/delete",
+                data: {
+                    likeId: [[${likeVO.likeId}]],
+                    userId: [[${userVO.userId}]],
+                    boardId: [[${boardId}]],
+                },
+                success: (result) => {
+                    boardLikes.innerHTML = parseInt(boardLikes.innerHTML) - 1;
+                    likeCount = 0;
+                    likeUpButton.style.border = "1px solid hsla(220, 9%, 46%, 0.3)";
+                    likeUpButton.style.color = "#000";
+                }
+            })
+        } else if(likeCount === -1) {
+            $.ajax({
+                type: "get",
+                url: "/like/update",
+                data: {
+                    likeId: [[${likeVO.likeId}]],
+                    userId: [[${userVO.userId}]],
+                    boardId: [[${boardId}]],
+                    likeCount: 1
+                },
+                success: (result) => {
+                    boardLikes.innerHTML = parseInt(boardLikes.innerHTML) + 2;
+                    likeCount = 1;
+                    likeUpButton.style.border = "1px solid hsla(220, 9%, 46%, 0.7)"
+                    likeUpButton.style.color = "#8BC34A";
+                    likeDownButton.style.border = "1px solid hsla(220, 9%, 46%, 0.3)";
+                    likeDownButton.style.color = "#000";
+                }
+            })
+        }
+        else {
+            $.ajax({
+                type: "get",
+                url: "/like/add",
+                data: {
+                    userId: [[${userVO.userId}]],
+                    boardId: [[${boardId}]],
+                    likeCount: 1
+                },
+                success: (result) => {
+                    boardLikes.innerHTML = parseInt(boardLikes.innerHTML) + 1;
+                    likeCount = 1;
+                    likeUpButton.style.border = "1px solid hsla(220, 9%, 46%, 0.7)"
+                    likeUpButton.style.color = "#8BC34A";
+                }
+            })
+        }
+    })
+    likeDownButton.addEventListener("click", () => {
+        if(likeCount === -1) {
+            $.ajax({
+                type: "get",
+                url: "/like/delete",
+                data: {
+                    likeId: [[${likeVO.likeId}]],
+                    userId: [[${userVO.userId}]],
+                    boardId: [[${boardId}]],
+                },
+                success: (result) => {
+                    boardLikes.innerHTML = parseInt(boardLikes.innerHTML) + 1;
+                    likeCount = 0;
+                    likeDownButton.style.border = "1px solid hsla(220, 9%, 46%, 0.3)";
+                    likeDownButton.style.color = "#000";
+                }
+            })
+        } else if(likeCount === 1) {
+            $.ajax({
+                type: "get",
+                url: "/like/update",
+                data: {
+                    likeId: [[${likeVO.likeId}]],
+                    userId: [[${userVO.userId}]],
+                    boardId: [[${boardId}]],
+                    likeCount: -1
+                },
+                success: (result) => {
+                    boardLikes.innerHTML = parseInt(boardLikes.innerHTML) - 2;
+                    likeCount = -1;
+                    likeDownButton.style.border = "1px solid hsla(220, 9%, 46%, 0.7)";
+                    likeDownButton.style.color = "#ff9933";
+                    likeUpButton.style.border = "1px solid hsla(220, 9%, 46%, 0.3)";
+                    likeUpButton.style.color = "#000";
+                }
+            })
+        }
+        else {
+            $.ajax({
+                type: "get",
+                url: "/like/add",
+                data: {
+                    userId: [[${userVO.userId}]],
+                    boardId: [[${boardId}]],
+                    likeCount: -1
+                },
+                success: (result) => {
+                    boardLikes.innerHTML = parseInt(boardLikes.innerHTML) - 1;
+                    likeCount = -1;
+                    likeDownButton.style.border = "1px solid hsla(220, 9%, 46%, 0.7)";
+                    likeDownButton.style.color = "#ff9933";
+                }
+            })
+        }
+    })
+
+
 
 
 

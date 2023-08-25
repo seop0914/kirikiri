@@ -7,5 +7,6 @@
         <typeAlias type="com.example.kirikiri.domain.UserVO" alias="userVO"/>
         <typeAlias type="com.example.kirikiri.domain.ScrapVO" alias="scrapVO"/>
         <typeAlias type="com.example.kirikiri.domain.CommentVO" alias="commentVO"/>
+        <typeAlias type="com.example.kirikiri.domain.LikeVO" alias="likeVO"/>
     </typeAliases>
 </configuration>

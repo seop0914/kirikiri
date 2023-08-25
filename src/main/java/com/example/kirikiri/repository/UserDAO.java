@@ -46,4 +46,9 @@ public class UserDAO {
     public void setUserPw(UserVO userVO){
         userMapper.updatePw(userVO);
     }
+    
+    // 유저 아이디로 프로필 찾기
+    public String getUserProfileByUserId(String userId) {
+        return userMapper.selectProfileByUserId(userId);
+    }
 }

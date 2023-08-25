@@ -33,7 +33,7 @@ public class BoardDAO {
         return boardMapper.countByUser(boardId);
     }
 
-    public List<BoardVO> getListAll(Integer page){
+    public List<BoardDTO> getListAll(Integer page){
         return boardMapper.selectAll(page);
     }
     public List<BoardVO> getListAllOrderByLikes(Integer page){

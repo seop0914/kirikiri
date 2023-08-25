@@ -60,4 +60,9 @@ public class UserServiceImpl implements UserService {
     public void updatePw(UserVO userVO) {
         userDAO.setUserPw(userVO);
     }
+
+    @Override
+    public String getProfileByUserId(String userId) {
+        return userDAO.getUserProfileByUserId(userId);
+    }
 }

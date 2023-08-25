@@ -38,14 +38,14 @@ window.onload=function() {
     const thumbnail = document.querySelector("label[for='picture'] div");
     file.addEventListener("change", function (event) {
         let reader = new FileReader();
-        reader.readAsDataURL(event.target.files[0]);
+        reader.readAsDataURL(event.target.file[0]);
         reader.onload = function (event) {
             console.log(event);
             let url = event.target.result;
             if (url.includes("image")) {
                 thumbnail.style.backgroundImage = "url('" + url + "')";
             } else {
-                thumbnail.style.backgroundImage = "url('/img/account.png')";
+                thumbnail.style.backgroundImage = "url('/img/account.svg')";
                 // ../images/account.png 대신 backend에 저장된 이미지 파일
             }
         }

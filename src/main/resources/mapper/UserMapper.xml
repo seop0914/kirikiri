@@ -40,7 +40,7 @@
 
     <!--    email로 특정 데이터 가져오기 -->
 
-    <select id="selectUserEmail" resultType="userVo">
+    <select id="selectUserEmail" resultType="userVO">
         SELECT USER_ID, USER_EMAIL
         FROM TBL_USER
         WHERE USER_EMAIL = #{userEmail}
@@ -62,4 +62,11 @@
         SET USER_PASSWORD = #{userPassword}
         WHERE USER_ID = #{userId}
     </update>
+
+<!--    유저 아이디로 프로필 찾기-->
+    <select id="selectProfileByUserId" resultType="String">
+        SELECT USER_PROFILE
+        FROM TBL_USER
+        WHERE USER_ID = #{userId}
+    </select>
 </mapper>

@@ -22,12 +22,11 @@ public interface BoardMapper {
     public Integer countByUser(String userId);
 
     //게시글 목록
-    public List<BoardVO> selectAll(Integer page);
+    public List<BoardDTO> selectAll(Integer page);
     public List<BoardVO> selectAllByLikes(Integer page);
     public List<BoardVO> selectAllByViews(Integer page);
 
     //카테고리 목록
-
     public List<BoardVO> selectCategory(BoardDTO boardDTO);
     public List<BoardVO> selectCategoryByLikes(BoardDTO boardDTO);
     public List<BoardVO> selectCategoryByViews(BoardDTO boardDTO);

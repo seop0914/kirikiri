@@ -457,6 +457,14 @@
     let likeDownButton = document.getElementById("down-button");
     let likeCount = [[${likeVO.likeCount}]];
 
+    if(likeCount === 1) {
+        likeUpButton.style.border = "1px solid hsla(220, 9%, 46%, 0.7)"
+        likeUpButton.style.color = "#8BC34A";
+    } else if(likeCount === -1) {
+        likeDownButton.style.border = "1px solid hsla(220, 9%, 46%, 0.7)";
+        likeDownButton.style.color = "#ff9933";
+    }
+
     likeUpButton.addEventListener("click", () => {
         if(likeCount === 1) {
             $.ajax({
